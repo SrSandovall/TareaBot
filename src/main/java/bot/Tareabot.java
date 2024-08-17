@@ -18,12 +18,12 @@ public class Tareabot extends TelegramLongPollingBot {
     private Set<Long> welcomedUsers = new HashSet<>();
     @Override
     public String getBotUsername() {
-        return "@NuevomiBot";
+        return "@xxxxx";
     }
 
     @Override
     public String getBotToken() {
-        return "7300857281:AAEzlKv9Ip3quT3POqoP6-chBZoVHnj7dDU";
+        return "xxxxx";
     }
 
     //El método onUpdateReceived(Update update) de la clase Bot se usa para manejar todas las actualizaciones que el
