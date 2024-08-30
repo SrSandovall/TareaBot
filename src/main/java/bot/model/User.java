@@ -1,5 +1,7 @@
 package bot.model;
 
+import java.sql.Timestamp;
+
 public class User {
     private int id;
     private String carne;
@@ -8,6 +10,22 @@ public class User {
     private String seccion;
     private long telegramid;
     private String activo;
+    private Timestamp fecha_respuesta;
+    private int pregunta_id;
+    private String respuesta_texto;
+
+
+
+    public int getPregunta_id() {return pregunta_id;}
+    public void setPregunta_id(int pregunta_id) {this.pregunta_id = pregunta_id;}
+
+
+    public Timestamp getfecha_respuesta(){return fecha_respuesta;}
+    public void setfecha_respuesta(Timestamp fecha_respuesta){this.fecha_respuesta = fecha_respuesta;}
+
+    public String getrespuesta_texto() {return respuesta_texto;}
+    public void setrespuesta_texto(String texto) {this.respuesta_texto = texto;}
+
 
 
     public int getId() {

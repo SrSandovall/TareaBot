@@ -9,6 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao {
+
+
+
     public void deleteUserByEmail(String email) throws SQLException {
         String query = "DELETE FROM  tb_usuarios WHERE correo = ?";
         try (Connection connection = DatabaseConnection.getConnection();
@@ -51,6 +54,8 @@ public class UserDao {
             statement.executeUpdate();
         }
     }
+
+
 
     public User getUserByTelegramId(long telegramid) throws SQLException {
         String query = "SELECT * FROM tb_usuarios WHERE telegramid = ?";

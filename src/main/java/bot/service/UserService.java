@@ -1,15 +1,18 @@
 package bot.service;
 
 import bot.dao.UserDao;
+import bot.dao.responsedao;
 import bot.db.DatabaseConnection;
 import bot.db.TransactionManager;
 import bot.model.User;
 
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class UserService {
+public class  UserService {
     private UserDao userDao = new UserDao();
+    private responsedao responseDao = new responsedao();
 
     public void deleteUserByEmail(String email) throws SQLException {
         try (Connection connection = DatabaseConnection.getConnection()) {
@@ -31,7 +34,7 @@ public class UserService {
             TransactionManager tm = new TransactionManager(connection);
             tm.beginTransaction();
             try {
-                userDao.insertUser(user);
+               responseDao.inserResponse(user);
                 tm.commit();
             } catch (SQLException e) {
                 tm.rollback();
@@ -71,4 +74,11 @@ public class UserService {
         return userDao.getUserByCarne(Carne);
 }
 
+    public responsedao getResponseDao() {
+        return responseDao;
+    }
+
+    public void setResponseDao(responsedao responseDao) {
+        this.responseDao = responseDao;
+    }
 }

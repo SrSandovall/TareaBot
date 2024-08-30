@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 public class botPregunton extends TelegramLongPollingBot {
+
+
+
     private final Map<Long, Integer> indicePregunta = new HashMap<>();
     private final Map<Long, String> seccionActiva = new HashMap<>();
     private final Map<String, String[]> preguntas = new HashMap<>();
@@ -85,6 +88,8 @@ public class botPregunton extends TelegramLongPollingBot {
         }
     }
 
+
+
     private List<InlineKeyboardButton> crearFilaBoton(String text, String callbackData) {
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText(text);
@@ -93,6 +98,9 @@ public class botPregunton extends TelegramLongPollingBot {
         row.add(button);
         return row;
     }
+
+
+
 
     private void inicioCuestionario(long chatId, String section) {
         seccionActiva.put(chatId, section);
@@ -113,6 +121,7 @@ public class botPregunton extends TelegramLongPollingBot {
             indicePregunta.remove(chatId);
         }
     }
+
 
     private void manejaCuestionario(long chatId, String response) {
         String section = seccionActiva.get(chatId);

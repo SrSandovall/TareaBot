@@ -3,6 +3,7 @@ package bot;
 import bot.model.User;
 import bot.service.UserService;
 import bot.telegrambot.BotRegistra;
+import bot.telegrambot.botCuestionario;
 import bot.telegrambot.botPregunton;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -146,7 +147,7 @@ public class Main {
 
         try{
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botPregunton mibot = new botPregunton();
+            botCuestionario mibot = new botCuestionario();
             botsApi.registerBot(mibot);
 
             System.out.println("el bot se esta ejecutando");
